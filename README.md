@@ -35,7 +35,47 @@ We need to maintain the list of users in a table and provide access only to that
 
 User needs to be registered and then log in to access the books
 
-Register User API
-Login User API
+register API
+Login API
+1. Authentication Mechanisms
+To check whether the user is logged in or not we use different Authentication mechanisms
+
+Commonly used Authentication mechanisms:
+
+Token Authentication
+Session Authentication
+2. Token Authentication mechanism
+We use the Access Token to verify whether the user is logged in or not
+
+2.1 Access Token
+Access Token is a set of characters which are used to identify a user
+
+Example:
+
+It is used to verify whether a user is Valid/Invalid
+
+2.2 How Token Authentication works?
+Server generates token and certifies the client
+Client uses this token on every subsequent request
+Client don’t need to provide entire details every time
+3. JWT
+JSON Web Token is a standard used to create access tokens for an application
+This access token can also be called as JWT Token
+
+3.1 How JWT works?
+Client: Login with username and password
+Server: Returns a JWT Token
+Client: Sends JWT Token while requesting
+Server: Sends Response to the client
+
+3.2 JWT Package
+jsonwebtoken package provides jwt.sign and jwt.verify functions
+
+jwt.sign() function takes payload, secret key, options as arguments and generates JWTToken out of it
+jwt.verify() verifies jwtToken and if it’s valid, returns payload. Else, it throws an error
+
+root@123root@123:.../myapp# npm install jsonwebtoken
+
+ 
 
 
